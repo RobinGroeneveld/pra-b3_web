@@ -1,0 +1,134 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.profile-icon{
+  width: 30px;
+  height: 30px;
+  border: solid black 3px;
+  border-radius: 200px;
+}
+.header-navbar{
+  display: flex;
+  flex-direction: row;
+}
+.alignment{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.header-navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+.middle{
+  text-align: center;
+  margin-top: 50px;
+}
+.wrapper{
+  margin: 0 auto;
+  width: 80%;
+}
+.profile-icon i{
+  margin-left: 7px;
+  margin-top: 5px;
+}
+.container-taken .middle{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Algemene stijlen */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #b0ddff; /* Blauw */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.header-navbar h3, .header-navbar h4 {
+  margin: 5px 0;
+}
+
+/* Profiel icoon */
+.profile-icon {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+}
+
+.profile-icon i {
+  color: #fff1bb; /* Geel */
+}
+
+/* Navigatie links */
+.a-elements-homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.a-elements-homepage a {
+  display: block;
+  background-color: #c0fdc0; /* Groen */
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.a-elements-homepage a:hover {
+  background-color: #c0fdc0; /* Donkergroen */
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #fff1bb; /* Geel */
+  padding: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.tasks a {
+  display: inline-block;
+  background-color: #b0ddff; /* Blauw */
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.tasks a:hover {
+  background-color: #b0ddff; /* Donkerblauw */
+  transform: scale(1.05);
+}
