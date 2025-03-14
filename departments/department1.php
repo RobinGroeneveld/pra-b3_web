@@ -10,7 +10,7 @@
         <?php
             require_once '../config/conn.php';
 
-            $query = "SELECT * FROM meldingen";
+            $query = "SELECT * FROM taken";
 
             $statement = $conn->prepare($query);
 
@@ -20,7 +20,7 @@
         ?>
         <table>
             <tr>
-                <th>attractie</th>
+        
                 <th>type</th>
                 <th>capaciteit</th>
                 <th>prioriteit</th>
