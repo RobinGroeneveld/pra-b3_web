@@ -20,13 +20,8 @@
         ?>
         <table>
             <tr>
-                <th>attractie</th>
-                <th>type</th>
-                <th>capaciteit</th>
-                <th>prioriteit</th>
-                <th>melder</th>
-                <th>overige_info</th>
-                <th>aanpassen</th>
+                <th>name</th>
+                <th>beschrijving</th>
             </tr>
             <?php foreach($meldingen as $melding):?>
                 <tr>
