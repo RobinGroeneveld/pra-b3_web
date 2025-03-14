@@ -41,94 +41,142 @@
   flex-direction: column;
   gap: 20px;
 }
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Algemene stijlen */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-/* Header */
 header {
-  background-color: #b0ddff; /* Blauw */
-  color: white;
-  text-align: center;
-  padding: 20px;
-  position: relative;
+    background: linear-gradient(135deg, #67b8e7, #5a97bf); /* Prachtige gradient voor de header */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    border-bottom: 4px solid #f1f1f1; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+    border-radius: 10px 10px 0 0; 
 }
 
 .header-navbar h3, .header-navbar h4 {
-  margin: 5px 0;
+    margin: 10px 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-
-/* Profiel icoon */
 .profile-icon {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff1bb;
+    border-radius: 50%;
+    background-color: #fff1bb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: #5a97bf;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
-.profile-icon i {
-  color: #fff1bb; /* Geel */
+.profile-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigatie links */
 .a-elements-homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }
 
 .a-elements-homepage a {
-  display: block;
-  background-color: #c0fdc0; /* Groen */
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  width: 200px;
-  text-align: center;
-  font-weight: bold;
-  transition: 0.3s;
+    display: block;
+    background: linear-gradient(145deg, #a8f1a6, #82d382); /* Lichte groene gradient voor knoppen */
+    color: #333;
+    text-decoration: none;
+    padding: 14px 28px;
+    margin: 12px;
+    border-radius: 50px;
+    width: 240px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .a-elements-homepage a:hover {
-  background-color: #c0fdc0; /* Donkergroen */
-  transform: scale(1.05);
+    background: linear-gradient(145deg, #82d382, #6ba15d);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
 footer {
-  background-color: #fff1bb; /* Geel */
-  padding: 15px;
-  text-align: center;
-  margin-top: 30px;
+    background-color: #fff1bb;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 10px 10px;
+    position: relative;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+footer p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
 .tasks a {
-  display: inline-block;
-  background-color: #b0ddff; /* Blauw */
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: 0.3s;
+    display: inline-block;
+    background: linear-gradient(145deg, #7db9e8, #5a97bf); /* Blauw met een subtiele gradient */
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    margin: 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .tasks a:hover {
-  background-color: #b0ddff; /* Donkerblauw */
-  transform: scale(1.05);
+    background: linear-gradient(145deg, #5a97bf, #3e7c98);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Toevoegen van een zachte animatie voor de hele body bij laden */
+body {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
