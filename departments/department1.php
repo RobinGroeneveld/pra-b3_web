@@ -20,7 +20,7 @@
         ?>
         <table>
             <tr>
-        
+                <th>attractie</th>
                 <th>type</th>
                 <th>capaciteit</th>
                 <th>prioriteit</th>
@@ -30,14 +30,8 @@
             </tr>
             <?php foreach($meldingen as $melding):?>
                 <tr>
-                    <td><?php echo $melding['attractie']; ?></td>
-                    <td><?php echo $melding['type']; ?></td>
-                    <td><?php echo $melding['capaciteit']; ?></td>
-                    <td><?php echo $melding['prioriteit']; ?></td>
-                    <td><?php echo $melding['melder']; ?></td>
-                    <td><?php echo $melding['overige_info']; ?></td>
-                    <td><a href="edit.php?id=<?= $melding['id'] ?>">aanpassen</a></td>
-                </tr>
+                    <td><?php echo $melding['name']; ?></td>
+                    <td><?php echo $melding['beschrijving']; ?></td>
             <?php endforeach; ?>
         </table>
     </main>
