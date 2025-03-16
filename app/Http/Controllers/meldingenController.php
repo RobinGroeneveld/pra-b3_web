@@ -1,40 +1,38 @@
 <?php
-if($_POST['action'] == 'create'){
-    $name = $_POST['name'];
-    if(empty($name)){
-        echo 'Naam is verplicht';
-    }
+if ($_POST['action'] == 'create') {
     $beschrijving = $_POST['beschrijving'];
-    if(empty($beschrijving)){
-        echo 'Beschrijving is verplicht';
-    }
     $afdeling = $_POST['afdeling'];
-    if(empty($afdeling)){
-        echo 'Afdeling is verplicht';
-    }
-    //1. verbinding
+    $title = $_POST['title'];
 
+    if (empty($beschrijving)) {
+        echo 'Beschrijving is verplicht';
+        exit;
+    }
+
+    if (empty($afdeling)) {
+        echo 'Afdeling is verplicht';
+        exit;
+    }
+
+    // 1. Verbinding
     require_once '../../../config/conn.php';
 
-    //2. Query
+    // 2. Query
+    $query = "INSERT INTO taken (title, beschrijving, afdeling) VALUES (:title, :beschrijving, :afdeling)";
 
-    $query = "INSERT INTO taken (name, beschrijving, afdeling) VALUES (:name, :beschrijving, :afdeling)";
+    // 3. Prepare
+    $statement = $conn->prepare($query);
 
-    //3. Prepare
-
-    $statement = $conn -> prepare($query);
-
-    //4. Execute
-
-    $statement -> execute([
-        ':name' => $name,
+    // 4. Execute
+    $statement->execute([
         ':beschrijving' => $beschrijving,
         ':afdeling' => $afdeling,
+        ":title" => $title
     ]);
 
-    header("location: ../../../resources/views/meldingen/index.php");
+    header("Location: ../../../resources/views/meldingen/index.php");
+    exit;
 }
-if($_POST['action'] == 'update'){
-    
-}
+
+
 

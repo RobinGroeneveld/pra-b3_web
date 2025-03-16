@@ -3,8 +3,8 @@
 <html lang="nl">
 
 <head>
-    <title>StoringApp / Meldingen / Nieuw</title>
-    <link rel="stylesheet" href="<?php echo $base_url; ?>/public_html/css/main.css">
+    <title>Nieuwe taak aanmaken</title>
+    <link rel="stylesheet" href="../../../public_html/css/main.css">
  
 </head>
 
@@ -18,10 +18,12 @@
         </div>
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
             <input type="hidden" name="action" value="create">
+            
             <div class="form-group">
-                <label for="name">Voer je naam in</label>
-                <input type="text" name="name" id="name">
+                <label for="title">Voer de title in</label>
+                <input type="text" name="title" id="title">
             </div>
+
             <div class="form-group">
                 <label for="beschrijving">Voer de beschrijving in</label>
                 <input type="text" name="beschrijving" id="beschrijving">

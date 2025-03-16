@@ -8,7 +8,7 @@
                 <h3>Welkom bij de takenlijst</h3>
             </div>
             <div class="profile-icon">
-                <a href="profile.php"><i class="fa-solid fa-user"></i></a>
+                <i class="fa-solid fa-house"></i>
             </div>
         </div>
     </div>

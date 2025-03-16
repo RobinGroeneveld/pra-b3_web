@@ -41,7 +41,29 @@
   flex-direction: column;
   gap: 20px;
 }
+table {
+  width: 150%;
+  border-collapse: collapse;
+}
 
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+}
+.alignment{
+  display: flex;
+  justify-content: space-evenly;
+}
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f1f1f1;
@@ -114,6 +136,10 @@ header {
     letter-spacing: 1px;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.home-icon i{
+  color: white;
+  font-size: 20px;
 }
 
 .a-elements-homepage a:hover {

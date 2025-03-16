@@ -28,6 +28,7 @@
             <a href="departments/klantenservice.php">klantenservice</a>
             <a href="departments/groen.php">groen</a>
         </div>
+        
     </main>
     <footer>
         <div class="tasks">
