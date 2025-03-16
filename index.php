@@ -21,12 +21,12 @@
     </header>
     <main>
         <div class="a-elements-homepage">
-            <a href="departments/department1.php"> afdeling 1</a>
-            <a href="departments/department2.php">afdeling 2</a>
-            <a href="departments/department3.php">afdeling 3</a>
-            <a href="departments/department4.php">afdeling 4</a>
-            <a href="departments/department5.php">afdeling 5</a>
-            <a href="departments/department6.php">Afdeling 6</a>
+            <a href="departments/personeel.php">personeel</a>
+            <a href="departments/horeca.php">horeca</a>
+            <a href="departments/techniek.php">techniek</a>
+            <a href="departments/inkoop.php">inkoop</a>
+            <a href="departments/klantenservice.php">klantenservice</a>
+            <a href="departments/groen.php">groen</a>
         </div>
     </main>
     <footer>

@@ -31,8 +31,7 @@
         <div class="container-taken">
             <div class="middle">
                 <a href="create.php">Nieuwe taak aanmaken</a>
-                <a href="delete.php">Taken verwijderen</a>
-                <a href="edit.php">Taken wijzigen</a>
+                <a href="edit.php">Taken verwijderen em wijzigen</a>
             </div>
             
         </div>

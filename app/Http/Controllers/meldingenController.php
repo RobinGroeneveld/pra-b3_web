@@ -20,8 +20,6 @@ if($_POST['action'] == 'create'){
 
     $query = "INSERT INTO taken (name, beschrijving, afdeling) VALUES (:name, :beschrijving, :afdeling)";
 
-
-
     //3. Prepare
 
     $statement = $conn -> prepare($query);
@@ -35,7 +33,8 @@ if($_POST['action'] == 'create'){
     ]);
 
     header("location: ../../../resources/views/meldingen/index.php");
+}
+if($_POST['action'] == 'update'){
     
-
 }
 

@@ -21,7 +21,7 @@
         ?>
         <table>
             <tr>
-                <th>name</th>
+                <th>to-do</th>
                 <th>beschrijving</th>
             </tr>
             <?php foreach($meldingen as $melding):?>
