@@ -19,11 +19,11 @@
         </form>
 
         <!-- Delete Confirmation Form -->
-        <h2>Verwijder Record</h2>
-        <form action="meldingenControler.php" method="POST">
+        <h2>Verwijder taak</h2>
+        <form action="../../../app/Http?controllers/meldingenControler.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
             <p>Weet je zeker dat je dit record wilt verwijderen?</p>
-            <button type="submit" name="action" value="delete">Verwijder</button>
+            <input type="submit" value="Taak verwijderen">
             <a href="index.php">Annuleer</a>
         </form>
     </div>
