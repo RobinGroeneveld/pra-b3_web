@@ -32,6 +32,7 @@
             <div class="middle">
                 <a href="create.php">Nieuwe taak aanmaken</a>
                 <a href="edit.php">Taken verwijderen em wijzigen</a>
+                <a href="done.php">Bekijk Voltooide Taken</a>
             </div>
             
         </div>
