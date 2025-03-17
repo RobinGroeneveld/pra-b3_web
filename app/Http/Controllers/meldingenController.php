@@ -34,5 +34,30 @@ if ($_POST['action'] == 'create') {
     exit;
 }
 
+if ($_POST['action'] == 'delete') {
+    $id = $_POST['id'];
+    
+    // Validate the ID
+    if (empty($id)) {
+        header("Location: ../../../resources/views/meldingen/index.php?error=Ongeldig ID");
+        exit;
+    }
 
+    // 1. Verbinding
+    require_once '../../../config/conn.php';
 
+    // 2. Query
+    $query = "DELETE FROM games WHERE id = :id";
+
+    // 3. Prepare
+    $statement = $conn->prepare($query);
+
+    // 4. Execute
+    $statement->execute([
+        
+        ':id' => $id
+    ]);
+
+    header("Location: ../../../resources/views/meldingen/index.php?success=Record succesvol verwijderd");
+    exit;
+}
