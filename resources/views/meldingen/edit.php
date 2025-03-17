@@ -20,7 +20,7 @@
 
         <!-- Delete Confirmation Form -->
         <h2>Verwijder Record</h2>
-        <form action="edit.php" method="POST">
+        <form action="meldingenControler.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
             <p>Weet je zeker dat je dit record wilt verwijderen?</p>
             <button type="submit" name="action" value="delete">Verwijder</button>
