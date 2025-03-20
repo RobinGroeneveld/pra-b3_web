@@ -15,6 +15,9 @@
             <div class="profile-icon">
                 <a href="profile.php"><i class="fa-solid fa-user"></i></a>
             </div>
+            <div class="login">
+                <a href="backend/login.php">Inloggen</a>
+            </div>
             
         </div>
         

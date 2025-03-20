@@ -1,9 +1,12 @@
+<?php 
+session_start();
+?>
 <?php require_once __DIR__.'/../../../config/config.php'; ?>
 <!doctype html>
 <html lang="nl">
 
 <head>
-    <title>StoringApp / Meldingen / Nieuw</title>
+    <title>taken veranderen</title>
     <?php require_once __DIR__.'/../components/head.php'; ?>
 </head>
 

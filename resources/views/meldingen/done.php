@@ -1,8 +1,11 @@
 <?php
+
+session_start();
+
 require_once __DIR__.'/../../../config/conn.php';
 
 // 1. Query
-$query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done'";
+$query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done' ORDER BY deadline ASC";
 
 // 2. Prepare
 $statement = $conn->prepare($query);

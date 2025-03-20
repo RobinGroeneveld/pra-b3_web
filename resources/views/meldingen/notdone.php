@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
     <?php
         require_once '../../../config/conn.php';
 
-        $query = "SELECT title, afdeling, deadline, status FROM taken WHERE status <> 'done'";
+        $query = "SELECT title, afdeling, deadline, status FROM taken WHERE status <> 'done' ORDER BY deadline DESC"; ;
 
         $statement = $conn->prepare($query);
 

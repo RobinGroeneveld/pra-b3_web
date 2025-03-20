@@ -57,4 +57,8 @@ if ($_POST['action'] == 'delete') {
 
     header("Location: ../../../resources/views/meldingen/index.php");
     exit;
+    $query = "SELECT * FROM taken ORDER BY deadline DESC";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
 }

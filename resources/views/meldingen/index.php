@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,19 +17,17 @@
         <h1>Taken:</h1>
         <a href="create.php">Nieuwe taak aanmaken</a>
 
-
         <?php
+        require_once "../../../config/conn.php"; 
 
-        require_once "../../../config/conn.php"; // <-- puntkomma toegevoegd
+    
+        $query = "SELECT * FROM taken ORDER BY deadline DESC";
 
-        $query = "SELECT * from taken";
-
-        $statement = $conn -> prepare($query);
+        $statement = $conn->prepare($query);
 
         $statement->execute();
-
-        $meldingen = $statement->fetchAll(pdo::FETCH_ASSOC);
-
+        
+        $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
         <div class="container-taken">
@@ -37,22 +39,18 @@
                 <th>Title</th>
                 <th>Deadline</th>
             </tr>
-        <?php foreach($meldingen as $melding):  ?>
-        
+        <?php foreach($meldingen as $melding): ?>
             <tr>
                 <td><p><?php echo($melding['beschrijving']);?></p></td>  
                 <td><p><?php echo($melding['afdeling']);?></p></td>  
                 <td><p><?php echo($melding['status']);?></p></td>  
                 <td><p><?php echo($melding['title']);?></p></td>  
                 <td><p><?php echo($melding['deadline']);?></p></td>  
-                <td><a href="edit.php? id=<?php echo $melding['id'];?>">Aanpassen</a></td>
+                <td><a href="edit.php?id=<?php echo $melding['id'];?>">Aanpassen</a></td>
             </tr>
         <?php endforeach; ?>
-
-        </table>
-            
+            </table>
+        </div>
     </div>
-
-   
 </body>
 </html>
