@@ -1,6 +1,5 @@
 <?php
-require_once __DIR__.'/../../../config/conn.php';
-
+require_once __DIR__.'/../config/conn.php';
 $afdeling = $_GET['afdeling'] ?? '';
 
 $query = "SELECT title, afdeling FROM taken WHERE afdeling = :afdeling";
