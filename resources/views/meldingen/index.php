@@ -8,38 +8,51 @@
     <link rel="stylesheet" href="../../../public_html/css/main.css">
 </head>
 <body>
+    <?php require_once __DIR__.'/../components/header.php'; ?>
+    <div class="container">
+        <h1>Taken:</h1>
+        <a href="create.php">Nieuwe taak aanmaken</a>
 
-    <header>
-        <div class="wrapper">
-            <div class="alignment">
-                <div class="logo">
-                    <a href="../../../index.php"><i class="fa-solid fa-house"></i><a/>
-                </div>
-                <div class="header-tekst">
-                    <h3>Welkom bij de takenlijst</h3>
-                </div>
-                <div class="profile-icon">
-                    <a href="../../../profile.php"><i class="fa-solid fa-user"></i></a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <div class="middle">
-            <h3>Kies een optie toevoegen, wijzigen of verwijderen</h3>
-        </div>
+
+        <?php
+
+        require_once "../../../config/conn.php"; // <-- puntkomma toegevoegd
+
+        $query = "SELECT * from taken";
+
+        $statement = $conn -> prepare($query);
+
+        $statement->execute();
+
+        $meldingen = $statement->fetchAll(pdo::FETCH_ASSOC);
+
+        ?>
+
         <div class="container-taken">
-            <div class="middle">
-                <a href="create.php">Nieuwe taak aanmaken</a>
-                <a href="edit.php">Taken verwijderen em wijzigen</a>
-                <a href="done.php">Bekijk Voltooide Taken</a>
-            </div>
-            
-        </div>
-    </main>
-       
-    <footer>
+            <table>
+            <tr>
+                <th>Beschrijving</th>
+                <th>Afdeling</th>
+                <th>Status</th>
+                <th>Title</th>
+                <th>Deadline</th>
+            </tr>
+        <?php foreach($meldingen as $melding):  ?>
+        
+            <tr>
+                <td><p><?php echo($melding['beschrijving']);?></p></td>  
+                <td><p><?php echo($melding['afdeling']);?></p></td>  
+                <td><p><?php echo($melding['status']);?></p></td>  
+                <td><p><?php echo($melding['title']);?></p></td>  
+                <td><p><?php echo($melding['deadline']);?></p></td>  
+                <td><a href="edit.php? id=<?php echo $melding['id'];?>">Aanpassen</a></td>
+            </tr>
+        <?php endforeach; ?>
 
-    </footer>
+        </table>
+            
+    </div>
+
+   
 </body>
 </html>

@@ -27,15 +27,14 @@
             <a href="departments/inkoop.php">inkoop</a>
             <a href="departments/klantenservice.php">klantenservice</a>
             <a href="departments/groen.php">groen</a>
-            <a href="departments/overzicht.php">Overzicht van de taken die nog niet klaar zijn</a>
         </div>
         
     </main>
     <footer>
         <div class="tasks">
-            <a href="resources/views/meldingen/create.php">Taken toevoegen</a>
-            <a href="resources/views/meldingen/edits.php">verwijderen en aanpassen</a>
+            <a href="resources/views/meldingen/index.php">Taken toevoegen, verwijderen en aanpassen</a>
             <a href="resources/views/meldingen/done.php">taken die klaar zijn</a>
+            <a href="resources/views/meldingen/notdone.php">Taken die nog niet klaar zijn</a>
         </div>
     </footer>
 </body>

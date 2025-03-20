@@ -2,7 +2,7 @@
 require_once __DIR__.'/../../../config/conn.php';
 
 // 1. Query
-$query = "SELECT title, afdeling FROM taken WHERE status = 'done'";
+$query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done'";
 
 // 2. Prepare
 $statement = $conn->prepare($query);
@@ -31,14 +31,15 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <th>Titel</th>
                     <th>Afdeling</th>
+                    <th>Deadline</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($tasks as $task): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($task['title']); ?></td>
-                        <td><?php echo htmlspecialchars($task['afdeling']); ?></td>
-                        <td><?php echo htmlspecialchars($task['beschrijving']); ?></td>
+                        <td><?php echo ($tasks['title']); ?></td>
+                        <td><?php echo ($tasks['afdeling']); ?></td>
+                        <td><?php echo ($tasks['deadline']); ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
