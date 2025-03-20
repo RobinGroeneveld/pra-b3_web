@@ -33,7 +33,9 @@
     </main>
     <footer>
         <div class="tasks">
-            <a href="resources/views/meldingen/index.php">Taken toevoegen, verwijderen en aanpassen</a>
+            <a href="resources/views/meldingen/create.php">Taken toevoegen</a>
+            <a href="resources/views/meldingen/edits.php">verwijderen en aanpassen</a>
+            <a href="resources/views/meldingen/done.php">taken die klaar zijn</a>
         </div>
     </footer>
 </body>
