@@ -15,6 +15,8 @@
         <h1>Taak aanpassen</h1>
 
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
+            <input type="hidden" name="action" value="update">
+            <input type="id" name="id" value="<?php echo $id ?>">
 
             <div class="form-group">
                 <label for="title">Voer de title in</label>
@@ -24,6 +26,10 @@
             <div class="form-group">
                 <label for="beschrijving">Voer de beschrijving in</label>
                 <input type="text" name="beschrijving" id="beschrijving" value="<?php echo $melding['beschrijving']; ?>">
+            </div>
+            <div class="forn-group">
+                <label for="deadline">Voer de deadline in</label>
+                <input type="date" name="deadline" id="deadline" value="<?php echo $melding['deadline']; ?>">
             </div>
 
             <div class="form-group">

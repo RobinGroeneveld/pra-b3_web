@@ -18,6 +18,7 @@
         </div>
         <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
             <input type="hidden" name="action" value="create">
+            <input type="id" name="id" value="<?php echo $id ?>">
             
             <div class="form-group">
                 <label for="title">Voer de title in</label>
@@ -39,6 +40,10 @@
                     <option value="klantenservice">Klantenservice</option>
                     <option value="groen">Groen</option>
                 </select>
+            </div>
+            <div class="deadline">
+                <label for="deadline">Vul een deadline in</label>
+                <input type="date" name="deadline" id="deadline">
             </div>
             <input type="submit" value="Verstuur melding">
         </form>

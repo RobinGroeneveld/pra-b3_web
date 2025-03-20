@@ -3,6 +3,7 @@ if ($_POST['action'] == 'create') {
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
     $title = $_POST['title'];
+    $deadline = $_POST['deadline'];
 
     if (empty($beschrijving)) {
         echo 'Beschrijving is verplicht';
@@ -18,7 +19,7 @@ if ($_POST['action'] == 'create') {
     require_once '../../../config/conn.php';
 
     // 2. Query
-    $query = "INSERT INTO taken (title, beschrijving, afdeling) VALUES (:title, :beschrijving, :afdeling)";
+    $query = "INSERT INTO taken (title, beschrijving, afdeling, deadline) VALUES (:title, :beschrijving, :afdeling, :deadline)";
 
     // 3. Prepare
     $statement = $conn->prepare($query);
@@ -27,7 +28,8 @@ if ($_POST['action'] == 'create') {
     $statement->execute([
         ':beschrijving' => $beschrijving,
         ':afdeling' => $afdeling,
-        ":title" => $title
+        ":title" => $title,
+        "deadline" => $deadline
     ]);
 
     header("Location: ../../../resources/views/meldingen/index.php");

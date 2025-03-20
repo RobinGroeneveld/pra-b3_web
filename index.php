@@ -27,6 +27,7 @@
             <a href="departments/inkoop.php">inkoop</a>
             <a href="departments/klantenservice.php">klantenservice</a>
             <a href="departments/groen.php">groen</a>
+            <a href="departments/overzicht.php">Overzicht van de taken die nog niet klaar zijn</a>
         </div>
         
     </main>
