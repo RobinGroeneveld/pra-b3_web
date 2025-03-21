@@ -6,21 +6,23 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public_html/css/main.css">
     <title>Document</title>
 </head>
 <body>
+<?php require_once "../resources/views/components/header.php"; ?>
 <?php
     require_once __DIR__.'/../config/conn.php';
 
-    $afdeling = $_GET['afdeling'] ?? '';
+    $afdeling = 'groen';
 
-    $query = "SELECT title, afdeling FROM taken WHERE afdeling = groen";
+    $query = "SELECT title, afdeling, beschrijving, status, deadline FROM taken WHERE afdeling = :afdeling";
     $statement = $conn->prepare($query);
     $statement->bindParam(':afdeling', $afdeling);
     $statement->execute();
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <h1>groen</h1>
+    <h1>Groen</h1>
     <table>
             <tr>
                 <th>Beschrijving</th>
@@ -29,15 +31,14 @@ session_start();
                 <th>Title</th>
                 <th>Deadline</th>
             </tr>
-        <?php foreach($meldingen as $melding):  ?>
+        <?php foreach($tasks as $task):  ?>
         
             <tr>
-                <td><p><?php echo($melding['beschrijving']);?></p></td>  
-                <td><p><?php echo($melding['afdeling']);?></p></td>  
-                <td><p><?php echo($melding['status']);?></p></td>  
-                <td><p><?php echo($melding['title']);?></p></td>  
-                <td><p><?php echo($melding['deadline']);?></p></td>  
-                <td><a href="edit.php? id=<?php echo $melding['id'];?>">Aanpassen</a></td>
+                <td><p><?php echo($task['beschrijving']);?></p></td>  
+                <td><p><?php echo($task['afdeling']);?></p></td>  
+                <td><p><?php echo($task['status']);?></p></td>  
+                <td><p><?php echo($task['title']);?></p></td>  
+                <td><p><?php echo($task['deadline']);?></p></td>  
             </tr>
         <?php endforeach; ?>
 
