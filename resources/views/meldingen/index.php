@@ -12,9 +12,20 @@ session_start();
     <link rel="stylesheet" href="../../../public_html/css/main.css">
 </head>
 <body>
-    <?php require_once __DIR__.'/../components/header.php'; ?>
+    <header>
+        <div class="wrapper">
+            <div class="alignment">
+                <div class="home-icon">
+                    <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
+                </div>
+                <div class="header-tekst">
+                    <h3>Welkom bij het ovezicht waar je de taken kan zien en kan maken</h3>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="container">
-        <h1>Taken:</h1>
+        
         <a href="create.php">Nieuwe taak aanmaken</a>
 
         <?php

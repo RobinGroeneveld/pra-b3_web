@@ -1,20 +1,6 @@
 <?php
 
 session_start();
-
-require_once __DIR__.'/../../../config/conn.php';
-
-// 1. Query
-$query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done' ORDER BY deadline ASC";
-
-// 2. Prepare
-$statement = $conn->prepare($query);
-
-// 3. Execute
-$statement->execute();
-
-// 4. Fetch results
-$tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>
@@ -24,29 +10,58 @@ $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     <?php require_once __DIR__.'/../components/head.php'; ?>
 </head>
 <body>
-    <?php require_once __DIR__.'/../components/header.php'; ?>
+    
+    <?php 
+    require_once __DIR__.'/../../../config/conn.php';
 
-    <div class="container">
-        <h1>Voltooide Taken</h1>
-        <a href="index.php">Terug naar overzicht</a>
-        <table>
-            <thead>
-                <tr>
-                    <th>Titel</th>
-                    <th>Afdeling</th>
-                    <th>Deadline</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($tasks as $task): ?>
+    // 1. Query
+    $query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done' ORDER BY deadline ASC";
+
+    // 2. Prepare
+    $statement = $conn->prepare($query);
+
+    // 3. Execute
+    $statement->execute();
+
+    // 4. Fetch results
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <header>
+        <div class="wrapper">
+            <div class="alignment">
+                <div class="home-icon">
+                    <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
+                </div>
+                <div class="header-tekst">
+                    <h3>Welkom bij het overzicht waar de taken niet klaar zijn</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo ($tasks['title']); ?></td>
-                        <td><?php echo ($tasks['afdeling']); ?></td>
-                        <td><?php echo ($tasks['deadline']); ?></td>
+                        <th>Titel</th>
+                        <th>Afdeling</th>
+                        <th>Deadline</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                    <?php foreach ($tasks as $task): ?>
+                        <tr>
+                            <td><?php echo ($tasks['title']); ?></td>
+                            <td><?php echo ($tasks['afdeling']); ?></td>
+                            <td><?php echo ($tasks['deadline']); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
+   
+    
 </body>
 </html>

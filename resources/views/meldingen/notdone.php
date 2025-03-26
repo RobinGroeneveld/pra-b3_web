@@ -9,6 +9,7 @@ session_start();
     <link rel="stylesheet" href="../../../public_html/css/main.css">
     <script src="https://kit.fontawesome.com/81af0c0b33.js" crossorigin="anonymous"></script>
     <title>takenlijst</title>
+    <?php require_once __DIR__.'/../components/head.php'; ?>
 </head>
 <body>
     <?php
@@ -29,7 +30,7 @@ session_start();
                 <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
             </div>
             <div class="header-tekst">
-                <h3>Welkom bij de not done takenlijst</h3>
+                <h3>Welkom bij het overzicht waar de taken niet klaar zijn</h3>
             </div>
         </div>
     </div>
