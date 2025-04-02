@@ -46,7 +46,7 @@ header {
   height: 65px;
   border-radius: 50%;
   background-color: #fff1bb;
-  color: #92d993;
+  color: #72a572;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -92,7 +92,7 @@ section:hover {
 
 section h2 {
   font-size: 28px;
-  color: #92d993;
+  color: #72a572;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -108,7 +108,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #92d993;
+  color: #72a572;
   padding: 16px 32px;
   margin-top: 20px;
   background-color: #fff1bb;
@@ -202,7 +202,7 @@ body {
 .a-elements-homepage a {
   display: block;
   background: linear-gradient(145deg, #fff1bb, #ffe88b); /* Lichte groene gradient voor knoppen */
-  color: #92d993;
+  color: #72a572;
   text-decoration: none;
   padding: 14px 28px;
   margin: 12px;
