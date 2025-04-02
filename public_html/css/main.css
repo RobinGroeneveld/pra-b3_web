@@ -46,11 +46,7 @@ header {
   height: 65px;
   border-radius: 50%;
   background-color: #fff1bb;
-<<<<<<< HEAD
-  color: #72a572;
-=======
   color: #92d993;
->>>>>>> parent of 2908eef (css gefixt)
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,9 +202,6 @@ body {
 .a-elements-homepage a {
   display: block;
   background: linear-gradient(145deg, #fff1bb, #ffe88b); /* Lichte groene gradient voor knoppen */
-<<<<<<< HEAD
-  color: #72a572;
-=======
   color: #92d993;
 >>>>>>> parent of 2908eef (css gefixt)
   text-decoration: none;
