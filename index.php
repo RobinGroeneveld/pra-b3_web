@@ -12,15 +12,13 @@
         <div class="header-navbar">
             <h3>Welkom bij de Homepagina van de takenlijst</h3>
             <h4>Taken toevoegen, verwijderen en aanpassen</h4>
-            <div class="profile-icon">
-                <a href="profile.php"><i class="fa-solid fa-user"></i></a>
+            <div class="logout">
+                <a href="logout.php">Uitloggen</a>
             </div>
             <div class="login">
-                <a href="backend/login.php">Inloggen</a>
+                <a href="login.php">Inloggen</a>
             </div>
-            
         </div>
-        
     </header>
     <main>
         <div class="a-elements-homepage">
