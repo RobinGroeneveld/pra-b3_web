@@ -39,9 +39,9 @@ if ($_POST['action'] == 'create') {
 if ($_POST['action'] == 'update'){
     $id = $_POST['id'];
     $beschrijving = $_POST['beschrijving'];
-    if(!is_numeric($capaciteit))
+    if(empty($beschrijving))
     {
-        $errors[]="Vul voor capaciteit een geldig getal in.";
+        $errors[]="Vul een beschrijving in";
     }
 
     if(empty($afdeling))
@@ -53,7 +53,7 @@ if ($_POST['action'] == 'update'){
     $title = $_POST['title'];
     if(empty($melder))
     {
-        $errors[]="voer een title on";
+        $errors[]="voer een title in";
     }
 
     $deadline = $_POST["deadline"]; 
