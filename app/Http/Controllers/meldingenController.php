@@ -36,6 +36,60 @@ if ($_POST['action'] == 'create') {
     exit;
 }
 
+if($action == 'update'){
+    $id = $_POST['id'];
+    $beschrijving = $_POST['beschrijving'];
+    if(!is_numeric($capaciteit))
+    {
+        $errors[]="Vul voor capaciteit een geldig getal in.";
+    }
+
+    if(empty($afdeling))
+    {
+        $errors[]="Vul voor capaciteit een geldige afdeling in.";
+    }
+
+
+    $title = $_POST['title'];
+    if(empty($melder))
+    {
+        $errors[]="voer een title on";
+    }
+
+    $deadline = $_POST["deadline"]; 
+
+    if(isset($errors)){
+        var_dump($errors);
+        die();
+    }
+
+
+    //1. Verbinding
+    require_once '../../../config/conn.php';
+
+    //2. Query
+    $query = "UPDATE meldingen
+            SET beschrijving = :beschrijving,
+                afdeling = :afdeling,
+                title = :title, 
+                deadline = :deadline
+        WHERE id = :id";
+
+    //3. Prepare
+    $statement = $conn->prepare($query);
+
+    //4. Execute
+    $statement->execute([
+        ":beschrijving"      => $beschrijving,
+        ":afdeling"      => $afdeling,
+        ":title"          => $title,
+        ":deadline"    => $deadline,
+        ":id"              => $id
+    ]);
+
+    header("Location: ../../../resources/views/meldingen/index.php?msg=Melding aangepast");
+    exit;
+}
 
 if ($_POST['action'] == 'delete') {
     $id = $_POST['id'];
