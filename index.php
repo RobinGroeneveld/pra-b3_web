@@ -11,7 +11,6 @@
     <header>
         <div class="header-navbar">
             <h3>Welkom bij de Homepagina van de takenlijst</h3>
-            <h4>Taken toevoegen, verwijderen en aanpassen</h4>
             <div class="logout">
                 <a href="logout.php">Uitloggen</a>
             </div>
