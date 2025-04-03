@@ -36,7 +36,7 @@ if ($_POST['action'] == 'create') {
     exit;
 }
 
-if($action == 'update'){
+if ($_POST['action'] == 'update'){
     $id = $_POST['id'];
     $beschrijving = $_POST['beschrijving'];
     if(!is_numeric($capaciteit))
