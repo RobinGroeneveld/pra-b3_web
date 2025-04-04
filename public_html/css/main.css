@@ -45,9 +45,10 @@ header {
 /* Container voor de inhoud */
 .container {
   width: 100%;
+}
 
- 
-
+.header-tekst{
+  text-align: center;
 }
 .alignment{
   display: flex;
@@ -216,4 +217,22 @@ button:hover {
   margin-right: 10px;
   font-size: 16px;
 
+}
+.wrapper{
+  margin: 0 auto;
+  width: 80%;
+}
+.header-tekst h3{
+  font-size: 23px;
+  font-weight: bolder;
+}
+.tasks{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.tasks2{
+  display: flex;
+  justify-content: space-evenly;
 }

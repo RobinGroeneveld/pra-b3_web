@@ -22,20 +22,23 @@
     </header>
     <main>
         <div class="a-elements-homepage">
-            <a href="departments/personeel.php">personeel</a>
-            <a href="departments/horeca.php">horeca</a>
-            <a href="departments/techniek.php">techniek</a>
-            <a href="departments/inkoop.php">inkoop</a>
+            <a href="departments/personeel.php">Personeel</a>
+            <a href="departments/horeca.php">Horeca</a>
+            <a href="departments/techniek.php">Techniek</a>
+            <a href="departments/inkoop.php">Inkoop</a>
             <a href="departments/klantenservice.php">klantenservice</a>
-            <a href="departments/groen.php">groen</a>
+            <a href="departments/groen.php">Groen</a>
         </div>
-        
     </main>
     <footer>
         <div class="tasks">
             <a href="resources/views/meldingen/index.php">Taken toevoegen, verwijderen en aanpassen</a>
-            <a href="resources/views/meldingen/done.php">taken die klaar zijn</a>
-            <a href="resources/views/meldingen/notdone.php">Taken die nog niet klaar zijn</a>
+            <a href="resources/views/meldingen/iddone.php">Taken die u zelf heeft gemaakt</a>
+            <a href="resources/views/meldingen/done.php">Taken die klaar zijn`over de hele afdeling</a>
+        </div>
+
+        <div class="tasks2">
+            <a href="resources/views/meldingen/notdone.php">Taken die nog niet klaar zijn over de hele afdeling</a>
         </div>
     </footer>
 </body>

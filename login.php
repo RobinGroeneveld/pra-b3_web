@@ -34,6 +34,5 @@ session_start();
             </div>
         </form>
     </main>
-    
 </body>
 </html>

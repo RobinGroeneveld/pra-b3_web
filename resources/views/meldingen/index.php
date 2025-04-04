@@ -17,6 +17,28 @@ if(!isset($_SESSION['user_id']))
     <link rel="stylesheet" href="../../../public_html/css/main.css">
 </head>
 <body>
+
+    <?php
+
+    // database connection
+    require_once "../../../config/conn.php"; 
+
+    // select query with placeholders
+    $query = "SELECT * 
+              FROM taken 
+              ORDER BY deadline DESC";
+
+    // prepare statement
+    $statement = $conn->prepare($query);
+
+    //statement execute
+    $statement->execute();
+    
+    //fetch data
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    
+    ?>
+
     <header>
         <div class="wrapper">
             <div class="alignment">
@@ -29,44 +51,34 @@ if(!isset($_SESSION['user_id']))
             </div>
         </div>
     </header>
-    <div class="container">
-        
-        <a href="create.php">Nieuwe taak aanmaken</a>
+    <main>
+        <div class="container">
+            <a href="create.php">Nieuwe taak aanmaken</a>
+            <div class="container-taken">
+                <table>
+                <tr>
+                    <th>Beschrijving</th>
+                    <th>Afdeling</th>
+                    <th>Status</th>
+                    <th>Title</th>
+                    <th>Deadline</th>
+                </tr>
+                
+            <?php foreach($tasks as $task): ?>
 
-        <?php
-        require_once "../../../config/conn.php"; 
+                <tr>
+                    <td><p><?php echo($task['beschrijving']);?></p></td>  
+                    <td><p><?php echo($task['afdeling']);?></p></td>  
+                    <td><p><?php echo($task['status']);?></p></td>  
+                    <td><p><?php echo($task['title']);?></p></td>  
+                    <td><p><?php echo($task['deadline']);?></p></td>  
+                    <td><a href="edit.php?id=<?php echo $task['id'];?>">Aanpassen</a></td>
+                </tr>
 
-    
-        $query = "SELECT * FROM taken ORDER BY deadline DESC";
-
-        $statement = $conn->prepare($query);
-
-        $statement->execute();
-        
-        $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
-        ?>
-
-        <div class="container-taken">
-            <table>
-            <tr>
-                <th>Beschrijving</th>
-                <th>Afdeling</th>
-                <th>Status</th>
-                <th>Title</th>
-                <th>Deadline</th>
-            </tr>
-        <?php foreach($meldingen as $melding): ?>
-            <tr>
-                <td><p><?php echo($melding['beschrijving']);?></p></td>  
-                <td><p><?php echo($melding['afdeling']);?></p></td>  
-                <td><p><?php echo($melding['status']);?></p></td>  
-                <td><p><?php echo($melding['title']);?></p></td>  
-                <td><p><?php echo($melding['deadline']);?></p></td>  
-                <td><a href="edit.php?id=<?php echo $melding['id'];?>">Aanpassen</a></td>
-            </tr>
-        <?php endforeach; ?>
-            </table>
+            <?php endforeach; ?>
+                </table>
+            </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

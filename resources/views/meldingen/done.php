@@ -1,11 +1,14 @@
 <?php
+
 session_start();
+
 if(!isset($_SESSION['user_id']))
 {
     $msg = "Je moet eerst inloggen!";
     header("Location:../../../login.php?msg=$msg");    
     exit;
 }
+
 ?>
 
 <!doctype html>
@@ -15,21 +18,24 @@ if(!isset($_SESSION['user_id']))
     <?php require_once __DIR__.'/../components/head.php'; ?>
 </head>
 <body>
-    
     <?php 
     require_once __DIR__.'/../../../config/conn.php';
 
-    // 1. Query
-    $query = "SELECT title, afdeling, deadline FROM taken WHERE status = 'done' ORDER BY deadline ASC";
+    // select query with placeholders
+    $query = "SELECT title, afdeling, deadline 
+              FROM taken 
+              WHERE status = 'done' 
+              ORDER BY deadline ASC";
 
-    // 2. Prepare
+    // statement prepare
     $statement = $conn->prepare($query);
 
-    // 3. Execute
+    //statement execute
     $statement->execute();
 
-    // 4. Fetch results
+    // fetch data
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
     ?>
 
     <header>
@@ -39,7 +45,7 @@ if(!isset($_SESSION['user_id']))
                     <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
                 </div>
                 <div class="header-tekst">
-                    <h3>Welkom bij het overzicht waar de taken niet klaar zijn</h3>
+                    <h3>Welkom bij het overzicht waar de taken klaar zijn over de hele afdeling</h3>
                 </div>
             </div>
         </div>
@@ -56,11 +62,13 @@ if(!isset($_SESSION['user_id']))
                 </thead>
                 <tbody>
                     <?php foreach ($tasks as $task): ?>
+                        
                         <tr>
-                            <td><?php echo ($tasks['title']); ?></td>
-                            <td><?php echo ($tasks['afdeling']); ?></td>
-                            <td><?php echo ($tasks['deadline']); ?></td>
+                            <td><?php echo ($task['title']); ?></td>
+                            <td><?php echo ($task['afdeling']); ?></td>
+                            <td><?php echo ($task['deadline']); ?></td> 
                         </tr>
+
                     <?php endforeach; ?>
                 </tbody>
             </table>

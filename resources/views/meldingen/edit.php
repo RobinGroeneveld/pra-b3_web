@@ -17,71 +17,88 @@ if(!isset($_SESSION['user_id']))
 </head>
 
 <body>
+    <header>
+        <div class="wrapper">
+            <div class="alignment">
+                <div class="home-icon">
+                    <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
+                </div>
+                <div class="header-tekst">
+                    <h3>Welkom bij het overzicht waar de taken klaar zijn over de hele afdeling</h3>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <?php require_once __DIR__.'/../components/header.php'; ?>
     <?php
+
+        // get the id from the URL method GET
         $id = $_GET['id'];
 
+        //database connection
         require_once '../../../config/conn.php';
 
-        $query = "SELECT * from taken WHERE id = :id";
+        // select query with placeholders
+        $query = "SELECT * 
+                  from taken 
+                  WHERE id = :id";
 
+        // prepare statement
         $statement = $conn -> prepare($query);
 
+        //statement execute
         $statement->execute([
             ":id" => $id
         ]);
 
-        $melding = $statement ->fetch(pdo::FETCH_ASSOC);
+        // fetch the data
+        $tasks = $statement ->fetch(pdo::FETCH_ASSOC);
         
     ?>
 
-    <div class="container">
-        <h1>Taak aanpassen</h1>
+    <main>
+        <div class="container">
+            <h1>Taak aanpassen</h1>
+            <form action="../../../app/Http/Controllers/meldingenController.php" method="POST">
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="id" value="<?php echo $tasks['id']; ?>">
 
-        <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
-            <input type="hidden" name="action" value="update">
-            <input type="hidden" name="id" value=<?php echo $id; ?>>
+                <div class="form-group">
+                    <label for="title">Titel</label>
+                    <input type="text" name="title" id="title" value="<?php echo $tasks['title']; ?>" required>
+                </div>
 
-            <div class="form-group">
-                <label for="title">Voer de title in</label>
-                <input type="text" min="0" name="title" id="title"  class="form-input" value="<?php echo $melding['title'];?>">
-            </div>
-            
-            <div class="form-group">
-                <label for="beschrijving">Voer de beschrijving in</label>
-                <input type="text" name="beschrijving" id="beschrijving" value="<?php echo $melding['beschrijving']; ?>">
-            </div>
-            <div class="form-group">
-                <label for="deadline">Voer de deadline in</label>
-                <input type="date" name="deadline" id="deadline" value="<?php echo $melding['deadline']; ?>">
-            </div>
+                <div class="form-group">
+                    <label for="beschrijving">Beschrijving</label>
+                    <input type="text" name="beschrijving" id="beschrijving" value="<?php echo $tasks['beschrijving']; ?>" required>
+                </div>
 
-            <div class="form-group">
-                <label for="afdeling">Kies de afdeling</label>
-                <select name="afdeling" id="afdeling">
-                    <option value="">--Selecteer een optie</option>
-                    <option value="personeel">Personeel</option>
-                    <option value="horeca">Horeca</option>
-                    <option value="techniek">Techniek</option>
-                    <option value="inkoop">Inkoop</option>
-                    <option value="klantenservice">Klantenservice</option>
-                    <option value="groen">Groen</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="afdeling">Afdeling</label>
+                    <input type="text" name="afdeling" id="afdeling" value="<?php echo $tasks['afdeling']; ?>" required>
+                </div>
 
-            <input type="submit" value="Verstuur melding">
-        </form>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <input type="text" name="status" id="status" value="<?php echo $tasks['status']; ?>" required>
+                </div>
 
-        <!-- Delete Confirmation Form -->
-        <h2>Verwijder taak</h2>
-        <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
-            <input type="hidden" name="action" value="delete">
-            <input type="hidden" name="id" value="<?php echo $melding['id']; ?>">
-            <input type="submit" value="Verwijder melding">
-        </form>
-    </div>
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" name="deadline" id="deadline" value="<?php echo $tasks['deadline']; ?>" required>
+                </div>
 
+                <input type="submit">Opslaan</input>
+            </form>
+         
+            <h2>Verwijder taak</h2>
+            <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="<?php echo $tasks['id']; ?>">
+                <input type="submit" value="Verwijder melding">
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>
