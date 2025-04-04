@@ -20,7 +20,7 @@ header {
   background: linear-gradient(135deg, #5a97bf, #6f9bd4);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 15px 20px;
   position: relative;
   border-bottom: 5px solid #e1e1e1;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
@@ -45,11 +45,11 @@ header {
 /* Container voor de inhoud */
 .container {
   width: 100%;
+
+ 
+
 }
 
-.header-tekst{
-  text-align: center;
-}
 .alignment{
   display: flex;
   justify-content: space-evenly;
@@ -94,7 +94,6 @@ a {
   letter-spacing: 1px;
   color: #92d993;
   padding: 16px 32px;
-  margin-top: 20px;
   background-color: #fff1bb;
   border-radius: 30px;
   display: inline-block;
@@ -116,7 +115,7 @@ footer {
   background-color: #5a97bf;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: 20px 20px;
   margin-top: 60px;
   box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 12px 12px;
@@ -217,22 +216,4 @@ button:hover {
   margin-right: 10px;
   font-size: 16px;
 
-}
-.wrapper{
-  margin: 0 auto;
-  width: 80%;
-}
-.header-tekst h3{
-  font-size: 23px;
-  font-weight: bolder;
-}
-.tasks{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-.tasks2{
-  display: flex;
-  justify-content: space-evenly;
 }
