@@ -12,7 +12,7 @@
     <div class="wrapper">
             <div class="alignment">
                 <div class="devloperland">
-                    <img src="img/logo-big-v4.png" alt="" height="200px" width="500px">
+                    <img src="img/logo-big-v4.png" alt="" height="150px" width="500px">
                 </div>
                 <div class="header-tekst">
                     <h3>Welkom bij het ovezicht waar je de taken kan zien en kan maken</h3>
