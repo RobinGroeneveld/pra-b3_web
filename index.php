@@ -9,15 +9,17 @@
 </head>
 <body>
     <header>
-        <div class="header-navbar">
-            <h3>Welkom bij de Homepagina van de takenlijst</h3>
-            <div class="logout">
-                <a href="logout.php">Uitloggen</a>
-            </div>
-            <div class="login">
-                <a href="login.php">Inloggen</a>
+    <div class="wrapper">
+            <div class="alignment">
+                <div class="devloperland">
+                    <img src="img/logo-big-v4.png" alt="" height="200px" width="500px">
+                </div>
+                <div class="header-tekst">
+                    <h3>Welkom bij het ovezicht waar je de taken kan zien en kan maken</h3>
+                </div>
             </div>
         </div>
+    </div>
     </header>
     <main>
         <div class="a-elements-homepage">

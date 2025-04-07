@@ -63,7 +63,6 @@ if(!isset($_SESSION['user_id']))
         </tr>
         <tbody>
             <?php foreach ($tasks as $task): ?>
-                
                 <tr>
                     <td><?php echo ($task['beschrijving']); ?></td>
                     <td><?php echo ($task['afdeling']); ?></td>

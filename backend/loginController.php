@@ -3,6 +3,7 @@ session_start();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$user_id = $_SESSION['user_id'];
 
 require_once "../config/conn.php";
 

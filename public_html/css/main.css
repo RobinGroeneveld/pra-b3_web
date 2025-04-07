@@ -1,238 +1,324 @@
 /* Algemeen Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-}
-body {
-  font-family: 'Lora', serif; 
-  background-color: #fafafa;
-  color: #333;
-  line-height: 1.6;
-  font-size: 16px;
-  padding: 0;
-  animation: fadeIn 1.5s ease-out;
-}
-
-/* Header Styling */
-header {
-  background: linear-gradient(135deg, #5a97bf, #6f9bd4);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-  position: relative;
-  border-bottom: 5px solid #e1e1e1;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  border-radius: 12px 12px 0 0;
-}
-
-.header-navbar {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 30px;
-}
-
-.header-navbar h3, .header-navbar h4 {
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 20px;
-  margin: 10px;
-}
-
-/* Container voor de inhoud */
-.container {
-  width: 100%;
-}
-
-.header-tekst{
-  text-align: center;
-}
-.alignment{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-}
-
-section {
-  background-color: #ffffff;
-  padding: 40px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  position: relative;
-}
-
-section:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-}
-
-section h2 {
-  font-size: 28px;
-  color: #92d993;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-section p {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 30px;
-}
-
-a {
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #92d993;
-  padding: 16px 32px;
-  margin-top: 20px;
-  background-color: #fff1bb;
-  border-radius: 30px;
-  display: inline-block;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-
-a:hover {
-  background-color: #5a97bf;
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Footer Styling */
-footer {
-  background-color: #5a97bf;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 60px;
-  box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 12px 12px;
-}
-
-footer p {
-  font-size: 14px;
-  color: #f1f1f1;
-}
-
-/* Tabel Styling */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 40px;
-}
-
-th, td {
-  padding: 18px;
-  border: 1px solid #ddd;
-  text-align: left;
-  font-size: 18px;
-}
-
-th {
-  background-color: #5a97bf;
-  color: white;
-  font-weight: bold;
-}
-
-td {
-  background-color: #f9f9f9;
-}
-
-/* Knoppen voor actiemogelijkheden */
-button {
-  background-color: #5a97bf;
-  color: white;
-  padding: 18px 36px;
-  font-size: 20px;
-  font-weight: 600;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-button:hover {
-  background-color: #4a8db6;
-  transform: translateY(-6px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Animaties voor overgang bij laadmoment */
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
   }
-  100% {
-    opacity: 1;
+  h3{
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
   }
+  label{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+    td, tr{
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+  body {
+    font-family: 'Lora', serif; 
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    padding: 0;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  /* Header Styling */
+  header {
+    background: linear-gradient(135deg, #5a97bf, #6f9bd4);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    border-bottom: 5px solid #e1e1e1;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .header-navbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  .header-navbar h3, .header-navbar h4 {
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 10px;
+  }
+  
+  /* Container voor de inhoud */
+  .container {
+    width: 100%;
+  }
+  
+  .header-tekst{
+    text-align: center;
+  }
+  .alignment{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  section {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+  }
+  
+  section:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  }
+  
+  section h2 {
+    font-size: 28px;
+    color: #92d993;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  section p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 30px;
+  }
+  
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #92d993;
+    padding: 16px 32px;
+    margin-top: 20px;
+    background-color: #fff1bb;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  a:hover {
+    background-color: #5a97bf;
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #5a97bf;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    box-shadow: 0 -6px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #f1f1f1;
+  }
+  
+  /* Tabel Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+  }
+  
+  th, td {
+    padding: 18px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  th {
+    background-color: #5a97bf;
+    color: white;
+    font-weight: bold;
+  }
+  
+  td {
+    background-color: #f9f9f9;
+  }
+  
+  /* Knoppen voor actiemogelijkheden */
+  button {
+    background-color: #5a97bf;
+    color: white;
+    padding: 18px 36px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  button:hover {
+    background-color: #4a8db6;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animaties voor overgang bij laadmoment */
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .a-elements-homepage a {
+    display: block;
+    background: linear-gradient(145deg, #fff1bb, #ffe88b); 
+    color: #92d993;
+    text-decoration: none;
+    padding: 14px 28px;
+    margin: 12px;
+    border-radius: 50px;
+    width: 240px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .a-elements-homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  .form-group-login{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .form-group-login input{
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 16px;
+  
+  }
+  .wrapper{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .header-tekst h3{
+    font-size: 23px;
+    font-weight: bolder;
+  }
+  .tasks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .tasks2{
+    display: flex;
+    justify-content: space-evenly;
+  }
+  /* Styling voor de formuliersectie */
+.form-section {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
 }
-.a-elements-homepage a {
-  display: block;
-  background: linear-gradient(145deg, #fff1bb, #ffe88b); 
-  color: #92d993;
-  text-decoration: none;
-  padding: 14px 28px;
-  margin: 12px;
-  border-radius: 50px;
-  width: 240px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.a-elements-homepage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40px;
-}
-.form-group-login{
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.form-group-login input{
-  width: 300px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-  font-size: 16px;
 
+.form-section h2 {
+    font-size: 28px;
+    color: #5a97bf;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
-.wrapper{
-  margin: 0 auto;
-  width: 80%;
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.header-tekst h3{
-  font-size: 23px;
-  font-weight: bolder;
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
-.tasks{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
 }
-.tasks2{
-  display: flex;
-  justify-content: space-evenly;
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Lora', serif;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form-group button {
+    background-color: #5a97bf;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #4a8db6;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }

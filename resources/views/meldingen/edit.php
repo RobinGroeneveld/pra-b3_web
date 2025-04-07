@@ -83,11 +83,6 @@ if(!isset($_SESSION['user_id']))
                     <input type="text" name="status" id="status" value="<?php echo $tasks['status']; ?>" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="deadline">Deadline</label>
-                    <input type="date" name="deadline" id="deadline" value="<?php echo $tasks['deadline']; ?>" required>
-                </div>
-
                 <input type="submit">Opslaan</input>
             </form>
          

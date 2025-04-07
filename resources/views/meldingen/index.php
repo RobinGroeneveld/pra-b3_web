@@ -42,6 +42,9 @@ if(!isset($_SESSION['user_id']))
     <header>
         <div class="wrapper">
             <div class="alignment">
+                <div class="devloperland">
+                    <img src="" alt="">
+                </div>
                 <div class="home-icon">
                     <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
                 </div>
@@ -57,20 +60,20 @@ if(!isset($_SESSION['user_id']))
             <div class="container-taken">
                 <table>
                 <tr>
+                    <th>Titel</th>
                     <th>Beschrijving</th>
                     <th>Afdeling</th>
                     <th>Status</th>
-                    <th>Title</th>
                     <th>Deadline</th>
                 </tr>
                 
             <?php foreach($tasks as $task): ?>
 
                 <tr>
+                    <td><p><?php echo($task['title']);?></p></td>  
                     <td><p><?php echo($task['beschrijving']);?></p></td>  
                     <td><p><?php echo($task['afdeling']);?></p></td>  
                     <td><p><?php echo($task['status']);?></p></td>  
-                    <td><p><?php echo($task['title']);?></p></td>  
                     <td><p><?php echo($task['deadline']);?></p></td>  
                     <td><a href="edit.php?id=<?php echo $task['id'];?>">Aanpassen</a></td>
                 </tr>

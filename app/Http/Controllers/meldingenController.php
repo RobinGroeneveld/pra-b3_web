@@ -4,6 +4,7 @@ if ($_POST['action'] == 'create') {
     $afdeling = $_POST['afdeling'];
     $title = $_POST['title'];
     $deadline = $_POST['deadline'];
+    $status = $_POST['status'];
 
     if (empty($beschrijving)) {
         echo 'Beschrijving is verplicht';
@@ -19,7 +20,8 @@ if ($_POST['action'] == 'create') {
     require_once '../../../config/conn.php';
 
     // 2. Query
-    $query = "INSERT INTO taken (title, beschrijving, afdeling, deadline) VALUES (:title, :beschrijving, :afdeling, :deadline)";
+    $query = "INSERT INTO taken (beschrijving, afdeling, status, title, deadline, user_id) 
+              VALUES (:beschrijving, :afdeling, :status, :title, :deadline, :user_id)";
 
     // 3. Prepare
     $statement = $conn->prepare($query);
@@ -28,8 +30,9 @@ if ($_POST['action'] == 'create') {
     $statement->execute([
         ':beschrijving' => $beschrijving,
         ':afdeling' => $afdeling,
-        ":title" => $title,
-        ":deadline" => $deadline
+        ':title' => $title,
+        ':deadline' => $deadline,
+        ':user_id' => $_SESSION['user_id']
     ]);
 
     header("Location: ../../../resources/views/meldingen/index.php");
@@ -42,7 +45,6 @@ if ($_POST['action'] == 'update') {
     $status = $_POST['status'];
     $afdeling = $_POST['afdeling']; // Zorg ervoor dat deze variabele wordt opgehaald
     $title = $_POST['title'];
-    $deadline = $_POST['deadline'];
 
     // Validatie
     $errors = [];
@@ -58,10 +60,6 @@ if ($_POST['action'] == 'update') {
         $errors[] = "Vul een titel in";
     }
 
-    if (empty($deadline)) {
-        $errors[] = "Vul een deadline in";
-    }
-
     if (!empty($errors)) {
         var_dump($errors);
         die();
@@ -75,7 +73,6 @@ if ($_POST['action'] == 'update') {
               SET beschrijving = :beschrijving,
                   afdeling = :afdeling,
                   title = :title,
-                  deadline = :deadline,
                   status = :status
               WHERE id = :id";
 
@@ -87,7 +84,6 @@ if ($_POST['action'] == 'update') {
         ":beschrijving" => $beschrijving,
         ":afdeling" => $afdeling,
         ":title" => $title,
-        ":deadline" => $deadline,
         ":status" => $status,
         ":id" => $id
     ]);
