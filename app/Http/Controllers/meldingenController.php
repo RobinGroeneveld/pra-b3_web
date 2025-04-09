@@ -24,7 +24,7 @@ if ($_POST['action'] == 'create') {
         echo 'Afdeling is verplicht';
         exit;
     }
-    if(nummeric($afdeling)){
+    if (is_numeric($afdeling)) {
         echo "Afdeling kan geen nummer zijn";
         exit;
     }
