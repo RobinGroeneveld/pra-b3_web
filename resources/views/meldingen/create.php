@@ -46,16 +46,16 @@ if(!isset($_SESSION['user_id']))
                 
                 <div class="form-group">
                     <label for="title">Voer de title in</label>
-                    <input type="text" name="title" id="title">
+                    <input type="text" name="title" id="title" required>
                 </div>
 
                 <div class="form-group">
                     <label for="beschrijving">Voer de beschrijving in</label>
-                    <input type="text" name="beschrijving" id="beschrijving">
+                    <input type="text" name="beschrijving" id="beschrijving" required>
                 </div>
                 <div class="form-group">
                     <label for="afdeling">Kies de afdeling</label>
-                    <select name="afdeling" id="afdeling">
+                    <select name="afdeling" id="afdeling" required>
                         <option value="">--Selecteer een optie</option>
                         <option value="personeel">Personeel</option>
                         <option value="horeca">Horeca</option>
@@ -67,9 +67,12 @@ if(!isset($_SESSION['user_id']))
                 </div>
                 <div class="deadline">
                     <label for="deadline">Vul een deadline in</label>
-                    <input type="date" name="deadline" id="deadline">
+                    <input type="date" name="deadline" id="deadline" required>
                 </div>
-                <input type="submit" value="Verstuur melding">
+                <div class="form-group">
+                    <input type="submit" value="Verstuur melding" required>
+                </div>
+                
             </form>
         </div>
     </main>

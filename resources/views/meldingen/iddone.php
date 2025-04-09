@@ -7,13 +7,13 @@ if(!isset($_SESSION['user_id']))
     header("Location:../../../login.php?msg=$msg");    
     exit;
 }
-    //database connection
+    //connection
     require_once "../../../config/conn.php"; 
 
     // Retrieve the logged-in user's ID from the session
     $user_id = $_SESSION['user_id'];
 
-    //select query with placeholders
+    //select query 
     $query = "SELECT beschrijving, afdeling, status, title, deadline 
               FROM taken
               WHERE user_id = :user_id
@@ -22,7 +22,7 @@ if(!isset($_SESSION['user_id']))
     //prepare statement
     $statement = $conn->prepare($query);
 
-    //statement execute
+    //execute
     $statement->execute([
         ":user_id" => $user_id
     ]);
@@ -55,19 +55,19 @@ if(!isset($_SESSION['user_id']))
     <main>
     <table>
         <tr>
+            <th>title</th>
             <th>Beschrijving</th>
             <th>Afdeling</th>
             <th>Status</th>
-            <th>Title</th>
             <th>Deadline</th>
         </tr>
         <tbody>
             <?php foreach ($tasks as $task): ?>
                 <tr>
+                    <td><?php echo ($task['title']); ?></td>
                     <td><?php echo ($task['beschrijving']); ?></td>
                     <td><?php echo ($task['afdeling']); ?></td>
                     <td><?php echo ($task['status']); ?></td>
-                    <td><?php echo ($task['title']); ?></td>
                     <td><?php echo ($task['deadline']); ?></td>
                 </tr>
 

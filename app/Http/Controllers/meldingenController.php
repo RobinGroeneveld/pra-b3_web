@@ -1,10 +1,19 @@
 <?php
+
+session_start();
+
 if ($_POST['action'] == 'create') {
     $beschrijving = $_POST['beschrijving'];
     $afdeling = $_POST['afdeling'];
     $title = $_POST['title'];
     $deadline = $_POST['deadline'];
-    $status = $_POST['status'];
+
+    
+
+    if(empty($title)){
+        echo "Titel is verplicht";
+        exit;
+    }
 
     if (empty($beschrijving)) {
         echo 'Beschrijving is verplicht';
@@ -15,13 +24,20 @@ if ($_POST['action'] == 'create') {
         echo 'Afdeling is verplicht';
         exit;
     }
+    if(nummeric($afdeling)){
+        echo "Afdeling kan geen nummer zijn";
+        exit;
+    }
+    if(empty($deadline)){
+        echo 'Deadline is verplicht';
+        exit;
+    }
 
     // 1. Verbinding
     require_once '../../../config/conn.php';
 
     // 2. Query
-    $query = "INSERT INTO taken (beschrijving, afdeling, status, title, deadline, user_id) 
-              VALUES (:beschrijving, :afdeling, :status, :title, :deadline, :user_id)";
+    $query = "INSERT INTO taken (title, beschrijving, afdeling, deadline) VALUES (:title, :beschrijving, :afdeling, :deadline)";
 
     // 3. Prepare
     $statement = $conn->prepare($query);
@@ -30,14 +46,14 @@ if ($_POST['action'] == 'create') {
     $statement->execute([
         ':beschrijving' => $beschrijving,
         ':afdeling' => $afdeling,
-        ':title' => $title,
-        ':deadline' => $deadline,
-        ':user_id' => $_SESSION['user_id']
+        ":title" => $title,
+        ":deadline" => $deadline
     ]);
 
     header("Location: ../../../resources/views/meldingen/index.php");
     exit;
 }
+
 
 if ($_POST['action'] == 'update') {
     $id = $_POST['id'];

@@ -57,8 +57,11 @@ if(!isset($_SESSION['user_id']))
     ?>
 
     <main>
-        <div class="container">
-            <h1>Taak aanpassen</h1>
+        <div class="wrapper">
+            <div class="middle">
+                <h3>Taak aanpassen</h3>
+            </div>
+            
             <form action="../../../app/Http/Controllers/meldingenController.php" method="POST">
                 <input type="hidden" name="action" value="update">
                 <input type="hidden" name="id" value="<?php echo $tasks['id']; ?>">
@@ -82,15 +85,18 @@ if(!isset($_SESSION['user_id']))
                     <label for="status">Status</label>
                     <input type="text" name="status" id="status" value="<?php echo $tasks['status']; ?>" required>
                 </div>
-
-                <input type="submit">Opslaan</input>
+                <div class="form-group">
+                    <input type="submit"></input>
+                </div>
+                
             </form>
-         
-            <h2>Verwijder taak</h2>
             <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
                 <input type="hidden" name="action" value="delete">
                 <input type="hidden" name="id" value="<?php echo $tasks['id']; ?>">
-                <input type="submit" value="Verwijder melding">
+                <div class="form-group">
+                    <input type="submit" value="Verwijder taak">
+                </div>
+                
             </form>
         </div>
     </main>

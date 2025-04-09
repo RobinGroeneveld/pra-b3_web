@@ -235,7 +235,7 @@
   }
   .wrapper{
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
   }
   .header-tekst h3{
     font-size: 23px;
@@ -280,7 +280,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: 14px;
 }
 
 .form-group label {
@@ -288,11 +288,10 @@
     font-weight: 600;
     color: #333;
 }
-
 .form-group input,
 .form-group textarea,
 .form-group select {
-    width: 100%;
+    width: 40%;
     padding: 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -304,21 +303,11 @@
     resize: none;
     height: 100px;
 }
-
-.form-group button {
-    background-color: #5a97bf;
-    color: white;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.middle{
+  text-align: center;
+  margin-top: 10px;
 }
-
-.form-group button:hover {
-    background-color: #4a8db6;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.middle h3{
+  font-size: 20px;
+  font-weight: bolder;
 }

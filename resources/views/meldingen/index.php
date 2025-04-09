@@ -49,7 +49,7 @@ if(!isset($_SESSION['user_id']))
                     <a href="../../../index.php"><i class="fa-solid fa-house"></i></a>
                 </div>
                 <div class="header-tekst">
-                    <h3>Welkom bij het ovezicht waar je de taken kan zien en kan maken</h3>
+                    <h3>Welkom bij het overzicht waar je de taken kan zien, kan maken en kan aanpassen</h3>
                 </div>
             </div>
         </div>

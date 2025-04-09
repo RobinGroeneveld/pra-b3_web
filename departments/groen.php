@@ -25,7 +25,7 @@ if(!isset($_SESSION['user_id']))
                     <a href="../index.php"><i class="fa-solid fa-house"></i></a>
                 </div>
                 <div class="header-tekst">
-                    <h3>Welkom bij de pagina waar u alle taken kan zien van de groen afdeling<</h3>
+                    <h3>Welkom bij de pagina waar u alle taken kan zien van de groen afdeling</h3>
                 </div>
             </div>
         </div>

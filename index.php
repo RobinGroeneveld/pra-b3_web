@@ -15,7 +15,13 @@
                     <img src="img/logo-big-v4.png" alt="" height="150px" width="500px">
                 </div>
                 <div class="header-tekst">
-                    <h3>Welkom bij het ovezicht waar je de taken kan zien en kan maken</h3>
+                    <h3>Welkom bij het hoofdmenu hier kan je taken aanmaken, verwijderen en aanpassen en de taken kunt u ook zien</h3>
+                </div>
+                <div class="inloggen">
+                    <a href="login.php">Inloggen</a>
+                </div>
+                <div class="logout">
+                    <a href="logout.php">Uitloggen</a>
                 </div>
             </div>
         </div>
