@@ -22,7 +22,7 @@ session_start();
         </div>
     </header>
     <main>
-        <form action="backend/loginController.php" method="POST" class="form-login">
+        <form action="backend-login/loginController.php" method="POST" class="form-login">
             <div class="form-group-login">
                 <input type="text" name="username" id="username" placeholder="Gebruikersnaam">
             </div>

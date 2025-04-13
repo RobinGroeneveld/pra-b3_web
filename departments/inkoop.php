@@ -32,26 +32,27 @@ if(!isset($_SESSION['user_id']))
     </header>
 <?php
 
-    // database connection
+    // Database connection
     require_once __DIR__.'/../config/conn.php';
 
-    // variable for the sort of department
+    // Variable for the sort of department
     $afdeling = 'inkoop';
 
-    // query with placeholders
+    // Query 
     $query = "SELECT title, afdeling, beschrijving, status, deadline 
               FROM taken 
-              WHERE afdeling = :afdeling";
+              WHERE afdeling = :afdeling
+              ORDER BY deadline ASC";
 
-    // statement prepare
+    // Prepare
     $statement = $conn->prepare($query);
 
     $statement->bindParam(':afdeling', $afdeling);
 
-    // statement execute
+    // Execute
     $statement->execute();
 
-    // fetch all the data
+    // Fetch all the data
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
@@ -77,7 +78,6 @@ if(!isset($_SESSION['user_id']))
         <?php endforeach; ?>
 
         </table>
-
 </body>
 </html>
 

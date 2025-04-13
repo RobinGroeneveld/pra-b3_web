@@ -26,7 +26,7 @@ if(!isset($_SESSION['user_id']))
     // select query with placeholders
     $query = "SELECT * 
               FROM taken 
-              ORDER BY deadline DESC";
+              ORDER BY deadline ASC";
 
     // prepare statement
     $statement = $conn->prepare($query);
@@ -65,6 +65,7 @@ if(!isset($_SESSION['user_id']))
                     <th>Afdeling</th>
                     <th>Status</th>
                     <th>Deadline</th>
+                    <th>Aanpassen</th>
                 </tr>
                 
             <?php foreach($tasks as $task): ?>

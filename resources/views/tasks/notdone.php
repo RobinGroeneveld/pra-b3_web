@@ -22,7 +22,10 @@ if(!isset($_SESSION['user_id']))
         require_once '../../../config/conn.php';
         
         //select query with placeholders
-        $query = "SELECT title, afdeling, deadline, status FROM taken WHERE status <> 'done' ORDER BY deadline DESC"; ;
+        $query = "SELECT title, afdeling, deadline, status 
+                  FROM taken 
+                  WHERE status <> 'done' 
+                  ORDER BY deadline ASC"; ;
 
         //prepare statement
         $statement = $conn->prepare($query);

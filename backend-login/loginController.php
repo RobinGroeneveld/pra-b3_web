@@ -5,12 +5,19 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $user_id = $_SESSION['user_id'];
 
+
+// 1. Verbinding
 require_once "../config/conn.php";
 
-$query = "SELECT * FROM users WHERE username = :username"; 
+// 2. Query
+$query = "SELECT * 
+          FROM users 
+          WHERE username = :username"; 
 
+// 3. Prepare
 $statement = $conn->prepare($query);
 
+ // 4. Execute
 $statement->execute([
     ":username" => $username
 ]);

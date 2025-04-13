@@ -83,7 +83,12 @@ if(!isset($_SESSION['user_id']))
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <input type="text" name="status" id="status" value="<?php echo $tasks['status']; ?>" required>
+                    <select name="status" id="status" required>
+                        <option value="">--Selecteer een optie</option>
+                        <option value="to-do">to-do</option>
+                        <option value="done">done</option>
+                    </select>
+                    
                 </div>
                 <div class="form-group">
                     <input type="submit"></input>

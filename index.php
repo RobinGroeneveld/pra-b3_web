@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+require_once 'config/config.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +25,11 @@
                 <div class="header-tekst">
                     <h3>Welkom bij het hoofdmenu hier kan je taken aanmaken, verwijderen en aanpassen en de taken kunt u ook zien</h3>
                 </div>
-                <div class="inloggen">
-                    <a href="login.php">Inloggen</a>
-                </div>
-                <div class="logout">
-                    <a href="logout.php">Uitloggen</a>
-                </div>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <a href="<?= $base_url ?>/logout.php">Uitloggen</a>
+                <?php else: ?>
+                    <a href="<?= $base_url ?>/login.php">Inloggen</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -39,13 +46,13 @@
     </main>
     <footer>
         <div class="tasks">
-            <a href="resources/views/meldingen/index.php">Taken toevoegen, verwijderen en aanpassen</a>
-            <a href="resources/views/meldingen/iddone.php">Taken die u zelf heeft gemaakt</a>
-            <a href="resources/views/meldingen/done.php">Taken die klaar zijn`over de hele afdeling</a>
+            <a href="resources/views/tasks/index.php">Taken toevoegen, verwijderen en aanpassen</a>
+            <a href="resources/views/tasks/self-made_tasks.php">Taken die u zelf heeft gemaakt</a>
+            <a href="resources/views/tasks/done.php">Taken die klaar zijn`over de hele afdeling</a>
         </div>
 
         <div class="tasks2">
-            <a href="resources/views/meldingen/notdone.php">Taken die nog niet klaar zijn over de hele afdeling</a>
+            <a href="resources/views/tasks/notdone.php">Taken die nog niet klaar zijn over de hele afdeling</a>
         </div>
     </footer>
 </body>
