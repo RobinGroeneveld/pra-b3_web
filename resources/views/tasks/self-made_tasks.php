@@ -7,26 +7,26 @@ if(!isset($_SESSION['user_id']))
     header("Location:../../../login.php?msg=$msg");    
     exit;
 }
-    //connection
+    // Database connection
     require_once "../../../config/conn.php"; 
 
     // Retrieve the logged-in user's ID from the session
     $user_id = $_SESSION['user_id'];
 
-    //select query 
+    // Query 
     $query = "SELECT beschrijving, afdeling, status, title, deadline 
               FROM taken
               WHERE user_id = :user_id
               ORDER BY deadline ASC";
 
-    //prepare statement
+    //Prepare
     $statement = $conn->prepare($query);
 
-    //execute
+    //Execute
     $statement->execute([
         ":user_id" => $user_id
     ]);
-    // fetch data
+    // Fetch data
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 

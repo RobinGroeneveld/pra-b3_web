@@ -18,11 +18,6 @@ if ($_POST['action'] == 'create') {
         exit;
     }
 
-    if (empty($afdeling)) {
-        echo 'Afdeling is verplicht';
-        exit;
-    }
-
     $afdeling = $_POST['afdeling'];
     if (is_numeric($afdeling)) {
         echo "Afdeling kan geen nummer zijn";
@@ -59,16 +54,14 @@ if ($_POST['action'] == 'create') {
         
     ]);
 
-    header("Location: ../../../resources/views/meldingen/index.php");
+    header("Location: ../../../index.php");
     exit;
 }
 
 
 if ($_POST['action'] == 'update') {
     $id = $_POST['id'];
-    $status = $_POST['status']
-
-    $errors = [];
+    $status = $_POST['status'];
 
     $beschrijving = $_POST['beschrijving'];
     if (empty($beschrijving)) {
@@ -76,9 +69,6 @@ if ($_POST['action'] == 'update') {
     }
 
     $afdeling = $_POST['afdeling']; 
-    if (empty($afdeling)) {
-        $errors[] = "Vul een geldige afdeling in";
-    }
 
     $title = $_POST['title'];
     if (empty($title)) {
@@ -114,7 +104,7 @@ if ($_POST['action'] == 'update') {
     ]);
 
     
-    header("Location: ../../../resources/views/meldingen/index.php?msg=Melding aangepast");
+    header("Location: ../../../index.php");
     exit;
 }
 
@@ -136,6 +126,6 @@ if ($_POST['action'] == 'delete') {
         ":id" => $id
     ]);
 
-    header("Location: ../../../resources/views/meldingen/index.php");
+    header("Location: ../../../index.php");
     exit;
 }

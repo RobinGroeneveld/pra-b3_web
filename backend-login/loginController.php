@@ -3,7 +3,6 @@ session_start();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$user_id = $_SESSION['user_id'];
 
 
 // 1. Verbinding

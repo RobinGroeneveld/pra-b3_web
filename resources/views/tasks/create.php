@@ -21,7 +21,6 @@ if(!isset($_SESSION['user_id']))
     <?php require_once "../components/head.php"; ?>
  
 </head>
-
 <body>
     <header>
         <div class="wrapper">
@@ -72,10 +71,8 @@ if(!isset($_SESSION['user_id']))
                 <div class="form-group">
                     <input type="submit" value="Verstuur melding" required>
                 </div>
-                
             </form>
         </div>
     </main>
 </body>
-
 </html>

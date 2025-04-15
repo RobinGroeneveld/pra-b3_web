@@ -19,21 +19,23 @@ if(!isset($_SESSION['user_id']))
 </head>
 <body>
     <?php 
+
+    // Database connection
     require_once __DIR__.'/../../../config/conn.php';
 
-    // select query with placeholders
+    // Query
     $query = "SELECT title, afdeling, deadline 
               FROM taken 
               WHERE status = 'done' 
               ORDER BY deadline ASC";
 
-    // statement prepare
+    // Prepare
     $statement = $conn->prepare($query);
 
-    //statement execute
+    // Execute
     $statement->execute();
 
-    // fetch data
+    // Fetch data
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
@@ -74,7 +76,5 @@ if(!isset($_SESSION['user_id']))
             </table>
         </div>
     </main>
-   
-    
 </body>
 </html>

@@ -32,30 +32,29 @@ if(!isset($_SESSION['user_id']))
 
     <?php
 
-        // get the id from the URL method GET
+        // Get the id from the URL method GET
         $id = $_GET['id'];
 
-        //database connection
+        //Database connection
         require_once '../../../config/conn.php';
 
-        // select query with placeholders
+        // Query
         $query = "SELECT * 
                   from taken 
                   WHERE id = :id";
 
-        // prepare statement
+        // Prepare
         $statement = $conn -> prepare($query);
 
-        //statement execute
+        //Execute
         $statement->execute([
             ":id" => $id
         ]);
 
-        // fetch the data
+        // Fetch the data
         $tasks = $statement ->fetch(pdo::FETCH_ASSOC);
         
     ?>
-
     <main>
         <div class="wrapper">
             <div class="middle">
@@ -88,12 +87,10 @@ if(!isset($_SESSION['user_id']))
                         <option value="to-do">to-do</option>
                         <option value="done">done</option>
                     </select>
-                    
                 </div>
                 <div class="form-group">
                     <input type="submit"></input>
                 </div>
-                
             </form>
             <form action="<?php echo $base_url; ?>/app/Http/Controllers/meldingenController.php" method="POST">
                 <input type="hidden" name="action" value="delete">
@@ -101,7 +98,6 @@ if(!isset($_SESSION['user_id']))
                 <div class="form-group">
                     <input type="submit" value="Verwijder taak">
                 </div>
-                
             </form>
         </div>
     </main>

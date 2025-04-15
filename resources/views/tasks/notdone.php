@@ -18,22 +18,22 @@ if(!isset($_SESSION['user_id']))
 </head>
 <body>
     <?php
-        //database connection
+        //Database connection
         require_once '../../../config/conn.php';
         
-        //select query with placeholders
+        //Query 
         $query = "SELECT title, afdeling, deadline, status 
                   FROM taken 
                   WHERE status <> 'done' 
                   ORDER BY deadline ASC"; ;
 
-        //prepare statement
+        //Prepare
         $statement = $conn->prepare($query);
 
-        //execute statement
+        //Execute
         $statement->execute();
 
-        // fetch data
+        // Fetch data
         $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
     ?>
 <header>
